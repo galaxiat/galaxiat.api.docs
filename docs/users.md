@@ -58,10 +58,12 @@
 
 - email
   - type : [EMAIL](/docs/types.md#email)
+  - required
 - password
   - min : 6 chars
   - max : 200 chars
   - type : [TEXT](/docs/types.md#text)
+  - required
 
 ### Headers Params :
 
@@ -76,7 +78,7 @@
   - coins : [NUMBER](/docs/types.md#number)
   - xp : [NUMBER](/docs/types.md#number)
   - email_verified : [BOOLEAN](/docs/types.md#boolean)
-  - email : [EMAIL](/docs/types.md#email),
+  - email : [EMAIL](/docs/types.md#email)
   - admin : [BOOLEAN](/docs/types.md#boolean)
 
 ```json
@@ -88,6 +90,53 @@
     "xp": 1200,
     "email_verified": true,
     "email": "hello@galaxiatapp.com",
+    "admin": true
+  }
+}
+```
+
+---
+
+## GET `/users/{username}`
+
+### Path Params :
+
+- username
+  - min : 2 chars
+  - max : 15 chars
+  - type : [TEXTNORMAL](/docs/types.md#textnormal)
+  - required
+
+
+### Query Params :
+- NONE
+
+### Headers Params :
+
+- authorization
+  - type : [USERTOKEN](/docs/types.md#usertoken)
+
+### Reponse :
+
+- [RESPONSE](/docs/types.md#response)
+- data :
+  - username : [TEXTNORMAL](/docs/types.md#textnormal)
+  - username_at : [TEXTNORMAL](/docs/types.md#textnormal)
+  - coins : [NUMBER](/docs/types.md#number)
+  - xp : [NUMBER](/docs/types.md#number)
+  - email_verified : [BOOLEAN](/docs/types.md#boolean) | undefined
+  - email : [EMAIL](/docs/types.md#email) | undefined
+  - admin : [BOOLEAN](/docs/types.md#boolean)
+
+```json
+{
+  "data": {
+    "username": "warstrolo",
+    "username_at": "galaxiat",
+    "coins": 1000,
+    "xp": 1200,
+    "email_verified": null,
+    "email": null,
     "admin": true
   }
 }

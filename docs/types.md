@@ -46,6 +46,11 @@ Textnormals is a set of chars that math the following regex `/^[a-zA-Z0-9 *]+$/`
 
 Ref = `[TEXTNORMALS](/docs/types.md#textnormals)`
 
+### `USERTOKEN`
+USERTOKEN is a JWT token.
+
+Ref = `[USERTOKEN](/docs/types.md#usertoken)`
+
 ### `RESPONSE`
 RESPONSE is a json object that define api response and data in the data key (defined per route)
 
