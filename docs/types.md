@@ -11,49 +11,59 @@
 
 ## Types : 
 
-### `EMAIL` :
+### `EMAIL`
 Email should be formatted according to [RFC5322](https://datatracker.ietf.org/doc/html/rfc5322#section-3.4.1)
 
 Ref = `[EMAIL](/docs/types.md#email)`
 
-### `LONGTEXT` : 
+### `LONGTEXT`
 Longtext is a set of chars that can contain specials chars such as emojis, breaks, and spaces.
 
 Ref = `[LONGTEXT](/docs/types.md#longtext)`
 
-### `TEXT` :
+### `TEXT`
 Text is a set of chars that can contain specials chars such as emojis and spaces but no breaks.
 
 Ref = `[TEXT](/docs/types.md#text)`
 
-### `BOOLEAN` :
+### `BOOLEAN`
 Boolean value can be `true` or `false`.
 
 Ref = `[BOOLEAN](/docs/types.md#boolean)`
 
-### `NUMBER` :
+### `NUMBER`
 Number value are signed INT.
 
 Ref = `[NUMBER](/docs/types.md#number)`
 
-### `TEXTNORMAL` :
+### `TEXTNORMAL`
 Textnormal is a set of chars that math the following regex `/^[a-zA-Z0-9]+$/`
 
 Ref = `[TEXTNORMAL](/docs/types.md#textnormal)`
 
-### `TEXTNORMALS` :
+### `TEXTNORMALS`
 Textnormals is a set of chars that math the following regex `/^[a-zA-Z0-9 *]+$/`
 
 Ref = `[TEXTNORMALS](/docs/types.md#textnormals)`
 
-### `RESPONSE` :
+### `RESPONSE`
 RESPONSE is a json object that define api response and data in the data key (defined per route)
 
+OK object 
 ```json
 {
-  "type" : "ok" | "error",
-  "message" : string,
-  "data" : dataobject
+  "type" : "ok",
+  "message" : "idk ... ",
+  "data" : "mydata"
+}
+```
+
+ERROR Object
+```json
+{
+  "type" : "ok",
+  "message" : "idk ... ",
+  "data" : "mydata"
 }
 ```
 Ref = `[RESPONSE](/docs/types.md#response)`
