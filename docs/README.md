@@ -9,18 +9,22 @@
   </p>
 </div>
 
-## About
+## Hosts & Envs
 
-galaxiat.api.docs [Markdown](https://www.markdownguide.org/) document all the route of Galaxiat (including admin ones). It allows you to build 3d parties app !
+### Production
+- `https://api.galaxiatapp.com` > Production API
+- `https://cdn.galaxiatapp.com` > Production CDN
 
-## Links
+### Dev
+- `https://api-dev.galaxiatapp.com` > Beta API
+- `https://cdn-dev.galaxiatapp.com` > Beta CDN
 
-- [Galaxiat](https://galaxiatapp.com/)
+## Endpoints
 
-## Contributing
-
-Before creating an issue, please ensure that it hasn't already been reported/suggested.
-
-## License
-Docs is under [MIT](./LICENSE.md) license
-
+### V0
+- [`/users`](users.md)
+- `/contents`
+- `/feeds`
+- `/stats`
+- `/seo`
+- `/admins`
