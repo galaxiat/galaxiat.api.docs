@@ -12,8 +12,11 @@
 ## POST `/users`
 
 ### Path Params :
+
 - NONE
+
 ### Query Params :
+
 - username
   - min : 2 chars
   - max : 15 chars
@@ -28,7 +31,9 @@
   - min : 6 chars
   - max : 200 chars
   - type : [TEXT](/docs/types.md#text)
-### Headers Params : 
+
+### Headers Params :
+
 - NONE
 
 ### Reponse :
@@ -37,40 +42,55 @@
 
 ```json
 {
-  "data" : null
+  "data": null
 }
 ```
+
 ---
 
 ## GET `/users`
 
 ### Path Params :
+
 - NONE
+
 ### Query Params :
+
 - email
   - type : [EMAIL](/docs/types.md#email)
 - password
   - min : 6 chars
   - max : 200 chars
   - type : [TEXT](/docs/types.md#text)
-### Headers Params : 
+
+### Headers Params :
+
 - NONE
 
 ### Reponse :
 
 - [RESPONSE](/docs/types.md#response)
+- data :
+  - username : [TEXTNORMAL](/docs/types.md#textnormal)
+  - username_at : [TEXTNORMAL](/docs/types.md#textnormal)
+  - coins : [NUMBER](/docs/types.md#number)
+  - xp : [NUMBER](/docs/types.md#number)
+  - email_verified : [BOOLEAN](/docs/types.md#boolean)
+  - email : [EMAIL](/docs/types.md#email),
+  - admin : [BOOLEAN](/docs/types.md#boolean)
 
 ```json
 {
-  "data" : {
-    "username" : TEXTNORMAL,
-    "username_at" : TEXTNORMAL,
-    "coins" : number,
-    "xp" : number, 
-    "email_verified" : true | false,
-    "email" : EMAIL,
-    "admin" : true | false
+  "data": {
+    "username": "warstrolo",
+    "username_at": "galaxiat",
+    "coins": 1000,
+    "xp": 1200,
+    "email_verified": true,
+    "email": "hello@galaxiatapp.com",
+    "admin": true
   }
 }
 ```
+
 ---

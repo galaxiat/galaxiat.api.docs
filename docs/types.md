@@ -26,6 +26,16 @@ Text is a set of chars that can contain specials chars such as emojis and spaces
 
 Ref = `[TEXT](/docs/types.md#text)`
 
+### `BOOLEAN` :
+Boolean value can be `true` or `false`.
+
+Ref = `[BOOLEAN](/docs/types.md#boolean)`
+
+### `NUMBER` :
+Number value are signed INT.
+
+Ref = `[NUMBER](/docs/types.md#number)`
+
 ### `TEXTNORMAL` :
 Textnormal is a set of chars that math the following regex `/^[a-zA-Z0-9]+$/`
 
