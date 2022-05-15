@@ -41,10 +41,10 @@ Return the current user object in the data key
 
 (1) **GET `/users`**
 
-| Field       | Type   | Description             |
-| ----------- | ------ | ----------------------- |
-| email       | string | email of the user       |
-| password    | string | password of the user    |
+| Field    | Type   | Description          |
+| -------- | ------ | -------------------- |
+| email    | string | email of the user    |
+| password | string | password of the user |
 
 Return a user token in the data key
 
@@ -52,9 +52,42 @@ Return a user token in the data key
 
 (1) **PATCH `/users`**
 
-| Field       | Type   | Description             |
-| ----------- | ------ | ----------------------- |
-| email       | string | email of the user       |
+| Field | Type   | Description       |
+| ----- | ------ | ----------------- |
+| email | string | email of the user |
+
+Return an response object with empty data key
+
+## Edit Password with Reset Request
+
+(1) **PATCH `/users`**
+
+| Field    | Type   | Description              |
+| -------- | ------ | ------------------------ |
+| email    | string | email of the user        |
+| code     | string | code of the request      |
+| password | string | new password of the user |
+
+Return an response object with empty data key
+
+## Validate Email
+
+(1) **PATCH `/users_check`**
+
+| Field    | Type   | Description              |
+| -------- | ------ | ------------------------ |
+| email    | string | email of the user        |
+| code     | string | code of the request      |
+
+Return an response object with empty data key
+
+## Resend Validate Email
+
+(1) **PATCH `/users_check`**
+
+| Field    | Type   | Description              |
+| -------- | ------ | ------------------------ |
+| email    | string | email of the user        |
 
 Return an response object with empty data key
 
