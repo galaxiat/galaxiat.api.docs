@@ -24,8 +24,6 @@ Represent a user in Galaxiat
 | xp             | 1   | int64   | The amount of XP that user have                                               |
 | discord_id?    | 1   | string  | The discord account id of the user                                            |
 
-## Create users
-
 ## Create user
 
 (1) **POST `/users`**
@@ -39,7 +37,26 @@ Represent a user in Galaxiat
 
 Return the current user object in the data key
 
-## Get users
+## Login user
+
+(1) **GET `/users`**
+
+| Field       | Type   | Description             |
+| ----------- | ------ | ----------------------- |
+| email       | string | email of the user       |
+| password    | string | password of the user    |
+
+Return a user token in the data key
+
+## Send Password Reset Request
+
+(1) **PATCH `/users`**
+
+| Field       | Type   | Description             |
+| ----------- | ------ | ----------------------- |
+| email       | string | email of the user       |
+
+Return an response object with empty data key
 
 ## Get current user
 
