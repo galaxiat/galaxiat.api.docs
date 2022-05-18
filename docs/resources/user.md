@@ -109,8 +109,20 @@ Return a user object in the data key
 
 Return the new user object in the data key
 
+## Edit user by id
+
+(1) **PATCH `/users/{user.id}`**
+
+Return the new user object in the data key
+
 ## Delete current user
 
 (1) **DELETE `/users/@me`**
 
-Return the new user object in the data key
+Return the old user object in the data key
+
+## Delete user by id
+
+(1) **DELETE `/users/{user.id}`**
+
+Return the old user object in the data key

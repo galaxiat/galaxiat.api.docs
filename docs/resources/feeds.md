@@ -37,3 +37,19 @@ Return the feeds available to the current user
 (1) **GET `/feeds/{feed.id}`**
 
 Return the feeds object if available to the user
+
+## Delete feed 
+
+(1) **DELETE `/feeds/{feed.id}`**
+
+Return the feeds object if available to the user
+
+## Get feed Content
+
+(1) **GET `/feeds/{feed.id}/contents`**
+
+- Query Params : 
+  - After : Unix milliseconds timestamp to select the content after a certain time
+  - Limit : Number of content to return (up to 50)
+
+Return the feeds object if available to the user
