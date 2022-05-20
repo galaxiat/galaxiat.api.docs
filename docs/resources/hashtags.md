@@ -16,10 +16,28 @@ Represent a hashtag in Galaxiat
 | downvote?         | 1   | int     | number of downvote that the hashtag has received |
 | report?           | 1   | int     | number of report that the hashtag has received   |
 | removed?          | 1   | boolean | if the hashtag was removed                       |
-| removed_reason?   | 1   | boolean | The reason why the hashtag has been removed      |
+| removed_reason?   | 1   | string | The reason why the hashtag has been removed      |
+
+## Lists hashtags
+
+(1) **GET `/hashtags`**
+
+Return an array of hashtags objects
 
 ## Search hashtags
 
 (1) **GET `/hashtags/{hashtag.name}`**
 
 Return an array of hashtags objects
+
+## Delete hashtags
+
+(1) **DELETE `/hashtags/{hashtag.name}`**
+
+Return an empty response object
+
+## Get hashtags contents
+
+(1) **GET `/hashtags/{hashtag.name}/contents`**
+
+Return content post objects array of hashtag

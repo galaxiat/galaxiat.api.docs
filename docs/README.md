@@ -50,8 +50,12 @@ Discontinued : API no longer available
 
 ## Resources
 
-- [user]()
-
+- [api](/docs/resources/api.md)
+- [contents](/docs/resources/contents.md)
+- [feeds](/docs/resources/feeds.md)
+- [hashtags](/docs/resources/hashtags.md)
+- [users](/docs/resources/user.md)
+  
 ## Security
 
 | Field           | Ver | Type   | Example                    | Description |
@@ -62,11 +66,18 @@ Discontinued : API no longer available
 
 All data that are passed to the API are json body
 
-<!--
+## API routes 
+
+Route relation `/vX/path_to_resources` where X is the version number of the API
+
+Example : `/v1/users`
+
+For API manager target directly the root path (`/`)
+
 ## How to read
 
-| Field        | Ver | Type   | Description                                                                                     |
-| ------------ | --- | ------ | ----------------------------------------------------------------------------------------------- |
-| random_info? | 0-7 | string | random_info is available from version 0 to version 7 and may not be included in all the returns and may not or may be updated  |
-| random_info?* | 3,7 | string | random_info is available in version 3 and in version 7 and may not be included in all the returns and can be updated |
-| random_info?! | 0-4 | string | random_info is available from version 0 to version 4 and may not be included in all the returns and is readonly | -->
+| Field         | Version   | Type   | Description                                                                                                      |
+| ------------- | ----- | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| random_info?  | 0-7   | string | random_info is available from version 0 to version 7 and may not be included in all the returns                  |
+| random_info!  | 3,7   | string | random_info is available in version 3 and in version 7 and is readonly and will be included in returns           |
+| random_info?! | 0,3-4 | string | random_info is available in version 0 and from version 3 to version 4 and may not be included in all the returns |

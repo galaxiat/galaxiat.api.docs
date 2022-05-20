@@ -16,13 +16,12 @@ Represent a user in Galaxiat
 | enabled        | 1   | boolean | If user account is enabled                                                    |
 | admin          | 1   | boolean | If user account is admin                                                      |
 | banned         | 1   | boolean | If user account is banned                                                     |
-| banned_reason? | 1   | boolean | The reason why the user was banned                                            |
+| banned_reason? | 1   | string  | The reason why the user was banned                                            |
 | created_at     | 1   | int64   | The unix timestamp of creation date of the user                               |
 | last_login?    | 1   | int64   | Date of the last login                                                        |
-| coins_public   | 1   | boolean | If the coin of the user is public                                             |
 | coins?         | 1   | int64   | The amount of coins that user own                                             |
-| xp             | 1   | int64   | The amount of XP that user have                                               |
-| discord_id?    | 1   | string  | The discord account id of the user                                            |
+| xp?            | 1   | int64   | The amount of XP that user have                                               |
+| discord_id?    | 1   | int64   | The discord account id of the user                                            |
 
 ## Create user
 
@@ -74,10 +73,10 @@ Return an response object with empty data key
 
 (1) **PATCH `/users_check`**
 
-| Field    | Type   | Description              |
-| -------- | ------ | ------------------------ |
-| email    | string | email of the user        |
-| code     | string | code of the request      |
+| Field | Type   | Description         |
+| ----- | ------ | ------------------- |
+| email | string | email of the user   |
+| code  | string | code of the request |
 
 Return an response object with empty data key
 
@@ -85,9 +84,9 @@ Return an response object with empty data key
 
 (1) **PATCH `/users_check`**
 
-| Field    | Type   | Description              |
-| -------- | ------ | ------------------------ |
-| email    | string | email of the user        |
+| Field | Type   | Description       |
+| ----- | ------ | ----------------- |
+| email | string | email of the user |
 
 Return an response object with empty data key
 
@@ -126,3 +125,15 @@ Return the old user object in the data key
 (1) **DELETE `/users/{user.id}`**
 
 Return the old user object in the data key
+
+## Get current user feeds
+
+(1) **GET `/users/@me/feeds`**
+
+Return a lists of the current users feed in the data key
+
+## Get current user feeds
+
+(1) **GET `/users/{user.id}/feeds`**
+
+Return a lists of targeted users feeds in the data key

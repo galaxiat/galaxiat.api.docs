@@ -30,7 +30,7 @@ Return the created feed object
 
 (1) **GET `/feeds`**
 
-Return the feeds available to the current user
+Return the feeds available to the current token account
 
 ## Get feed 
 
@@ -52,4 +52,4 @@ Return the feeds object if available to the user
   - After : Unix milliseconds timestamp to select the content after a certain time
   - Limit : Number of content to return (up to 50)
 
-Return the feeds object if available to the user
+Return content post objects array
