@@ -12,6 +12,6 @@ Represent the API status
 
 ## Get API(s) status
 
-(1) **GET `/`**
+(1) **GET `/apis`**
 
 Return an API JSON object
