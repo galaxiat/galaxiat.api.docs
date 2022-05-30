@@ -42,11 +42,40 @@ Discontinued : API no longer available
 
 ### Version (0,1)
 
-| Field   | Type            | Description                                      |
-| ------- | --------------- | ------------------------------------------------ |
-| type    | "error" or "ok" | If the request was successful or not             |
-| message | string          | Message of the request                           |
-| data    | ?               | The data of the request => depend of the request |
+#### Response object
+
+| Field   | Type                           | Description                                      |
+| ------- | ------------------------------ | ------------------------------------------------ |
+| type    | "error" or "ok" or "ratelimit" | If the request was successful or not             |
+| message | string                         | Message of the request                           |
+| data    | ?                              | The data of the request => depend of the request |
+
+#### Field Response
+
+**Errors fields**
+
+```json
+{
+  "errors": {
+    "field_name": ["Error message 1", "error message 2"],
+    "field_name_others": ["Error message 3"]
+  },
+  "data": null,
+  "ok": "false"
+}
+```
+
+**Ok fields**
+
+```json
+{
+  "errors": {},
+  "data": {
+    "key": "value"
+  },
+  "ok": "true"
+}
+```
 
 ## Resources
 
@@ -55,7 +84,7 @@ Discontinued : API no longer available
 - [feeds](/docs/resources/feeds.md)
 - [hashtags](/docs/resources/hashtags.md)
 - [users](/docs/resources/user.md)
-  
+
 ## Security
 
 | Field           | Ver | Type   | Example                    | Description |
@@ -66,7 +95,7 @@ Discontinued : API no longer available
 
 All data that are passed to the API are json body
 
-## API routes 
+## API routes
 
 Route relation `/vX/path_to_resources` where X is the version number of the API
 
@@ -76,8 +105,15 @@ For API manager target directly the root path (`/`)
 
 ## How to read
 
-| Field         | Version   | Type   | Description                                                                                                      |
-| ------------- | ----- | ------ | ---------------------------------------------------------------------------------------------------------------- |
-| random_info?  | 0-7   | string | random_info is available from version 0 to version 7 and may not be included in all the returns                  |
-| random_info!  | 3,7   | string | random_info is available in version 3 and in version 7 and is readonly and will be included in returns           |
-| random_info?! | 0,3-4 | string | random_info is available in version 0 and from version 3 to version 4 and may not be included in all the returns |
+| Field         | Version | Type   | Description                                                                                                      |
+| ------------- | ------- | ------ | ---------------------------------------------------------------------------------------------------------------- |
+| random_info?  | 0-7     | string | random_info is available from version 0 to version 7 and may not be included in all the returns                  |
+| random_info!  | 3,7     | string | random_info is available in version 3 and in version 7 and is readonly and will be included in returns           |
+| random_info?! | 0,3-4   | string | random_info is available in version 0 and from version 3 to version 4 and may not be included in all the returns |
+
+## OP Codes
+
+| Code  | Version | Message              |
+| ----- | ------- | -------------------- |
+| F-400 | 1       | Field is invalid     |
+| F-302 | 1       | Field value is token |

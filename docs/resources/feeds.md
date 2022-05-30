@@ -32,13 +32,13 @@ Return the created feed object
 
 Return the feeds available to the current token account
 
-## Get feed 
+## Get feed
 
 (1) **GET `/feeds/{feed.id}`**
 
 Return the feeds object if available to the user
 
-## Delete feed 
+## Delete feed
 
 (1) **DELETE `/feeds/{feed.id}`**
 
@@ -48,8 +48,9 @@ Return the feeds object if available to the user
 
 (1) **GET `/feeds/{feed.id}/contents`**
 
-- Query Params : 
-  - After : Unix milliseconds timestamp to select the content after a certain time
-  - Limit : Number of content to return (up to 50)
+| Field | Type | Description                                                            |
+| ----- | ---- | ---------------------------------------------------------------------- |
+| after | int  | Unix milliseconds timestamp to select the content after a certain time |
+| limit | int  | Number of content to return (up to 50)                                 |
 
 Return content post objects array

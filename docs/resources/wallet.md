@@ -53,6 +53,42 @@ This object represent the contributors wallet transactions
 
 ## Get stats
 
-(1) **Get `/stats`**
+(1) **Get `/wallet/global`**
 
-Return the stats object
+Return Galaxiat Wallet object 
+
+(1) **Get `/wallet/global/owners`**
+
+Return an array with Galaxiat wallet owning object grouped by wallet id
+
+(1) **Get `/wallet/global/transactions`**
+
+| Field | Type   | Description             |
+| ----- | ------ | ----------------------- |
+| limit | number | number of entry to take |
+| after | number | number of entry to skip |
+
+Return an array of wallet transactions object in the Data Key
+
+(1) **Get `/wallet/{wallet.id}`**
+
+Return the wallet object (personal)
+
+(1) **Get `/wallet/{wallet.id}/transactions`**
+
+| Field | Type   | Description             |
+| ----- | ------ | ----------------------- |
+| limit | number | number of entry to take |
+| after | number | number of entry to skip |
+
+Return an array of wallet transactions (personal) object in the Data Key
+
+(1) **Post `/wallet/{wallet.id}/transactions`**
+
+| Field     | Ver | Type | Description                               |
+| --------- | --- | ---- | ----------------------------------------- |
+| value     | 1   | int  | number of tokens that have been exchanged |
+| from      | 1   | int  | id of the wallet that gave the tokens     |
+| to        | 1   | int  | id of the wallet that got the tokens      |
+
+Return an empty data key with success or error

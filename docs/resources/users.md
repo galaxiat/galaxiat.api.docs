@@ -34,7 +34,7 @@ Represent a user in Galaxiat
 | email       | string | email of the user       |
 | password    | string | password of the user    |
 
-Return the current user object in the data key
+Return an object of field impacted by errors (if any) and users data in the data key
 
 ## Login user
 
@@ -47,9 +47,26 @@ Return the current user object in the data key
 
 Return a user token in the data key
 
+## Resend Validate Email
+
+(1) **PATCH `/users/@me/email_check`**
+
+Return an response object with empty data key
+
+## Validate Email
+
+(1) **PATCH `/users/@me/email_check_validate`**
+
+| Field | Type   | Description         |
+| ----- | ------ | ------------------- |
+| email | string | email of the user   |
+| code  | string | code of the request |
+
+Return an response object with empty data key
+
 ## Send Password Reset Request
 
-(1) **PATCH `/users`**
+(1) **PATCH `/users/@me/password`**
 
 | Field | Type   | Description       |
 | ----- | ------ | ----------------- |
@@ -59,34 +76,13 @@ Return an response object with empty data key
 
 ## Edit Password with Reset Request
 
-(1) **PATCH `/users`**
+(1) **PATCH `/users/@me/password_validate`**
 
 | Field    | Type   | Description              |
 | -------- | ------ | ------------------------ |
 | email    | string | email of the user        |
 | code     | string | code of the request      |
 | password | string | new password of the user |
-
-Return an response object with empty data key
-
-## Validate Email
-
-(1) **PATCH `/users_check`**
-
-| Field | Type   | Description         |
-| ----- | ------ | ------------------- |
-| email | string | email of the user   |
-| code  | string | code of the request |
-
-Return an response object with empty data key
-
-## Resend Validate Email
-
-(1) **PATCH `/users_check`**
-
-| Field | Type   | Description       |
-| ----- | ------ | ----------------- |
-| email | string | email of the user |
 
 Return an response object with empty data key
 
