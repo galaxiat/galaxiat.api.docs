@@ -40,4 +40,9 @@ Return an empty response object
 
 (1) **GET `/hashtags/{hashtag.name}/contents`**
 
-Return content post objects array of hashtag
+| Field | Type | Description                                                            |
+| ----- | ---- | ---------------------------------------------------------------------- |
+| after | int  | Unix milliseconds timestamp to select the content after a certain time |
+| limit | int  | Number of content to return (up to 50)                                 |
+
+Return content post objects array 
