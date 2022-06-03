@@ -41,6 +41,7 @@ Represent an external community stats
 
 ## Get communities list
 
+(1) **GET `/community/discover`**
 (1) **GET `/community/discover/{hashtag.name}`**
 
 | Field | Type | Description                                               |
@@ -48,7 +49,7 @@ Represent an external community stats
 | after | int  | number of page to skip. Skip will be : `limit` \* `after` |
 | limit | int  | Number of community to return up to 50                    |
 
-Return an array of the top `limit` community on the hashtag
+Return an array of community object of the top `limit` community on the hashtag
 
 (1) **GET `/community/info/{community.id}`**
 
